@@ -1,0 +1,256 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.phone {
+  background-image: url(http://store.storeimages.cdn-apple.com/4973/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6/plus/iphone6-plus-box-space-gray-2014_GEO_US?wid=478&hei=595&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1453545761859);
+  display: flex;
+  flex-direction: column;
+  height: 595px;
+  padding-top: 72px;
+  width: 478px;
+  align-items: center;
+}
+
+.screen {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 451px;
+  align-items: center;
+  overflow: auto;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 254px;
+}
+
+.everythingButChoices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerElement {
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  height: 24px;
+  justify-content: space-between;
+  padding-bottom: 5px;
+  width: 240px;
+}
+
+.headerIcon {
+  height: 24px;
+  width: 24px;
+}
+
+.headerTextElement {
+  color: red;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.pictureFrame {
+  box-shadow: 1px 1px 10px 1px lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  height: 316px;
+  width: 234px;
+  margin-top: 10px;
+}
+
+.first-pic {
+  height: 278px;
+  width: 208px;
+}
+
+.nameAndAgeElement {
+  display: flex;
+  font-size: 14px;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+  width: 208px;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.comma_and_space {
+  margin-right: 3px;
+}
+
+.age {
+  font-weight: 400;
+}
+
+.college {
+  color: lightgray;
+  font-size: 11px;
+  margin-bottom: 5px;
+  width: 208px;
+}
+
+.undersheetOneElement {
+  box-shadow: 1px 1px 10px 1px lightgray;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  height: 5px;
+  width: 226px;
+}
+
+.undersheetTwoElement {
+  box-shadow: 1px 1px 10px 1px lightgray;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  height: 5px;
+  width: 215px;
+}
+
+.choices {
+  display: flex;
+  height: 60px;
+  justify-content: space-around;
+  align-items: center;
+  width: 254px;
+}
+
+.large_icon {
+  border: 8px solid hsl(0, 0%, 95%);
+  border-radius: 1000px;
+  display: flex;
+  height: 57px;
+  justify-content: center;
+  align-items: center;
+  width: 57px;
+}
+
+.small_icon {
+  border: 6px solid hsl(0, 0%, 95%);
+  border-radius: 1000px;
+  display: flex;
+  height: 47px;
+  justify-content: center;
+  align-items: center;
+  width: 47px;
+}
+
+.choiceBarElement {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  width: 254px;
+}
+
+.dislikeButtonElement {
+  background-color: hsl(0, 100%, 77%);
+  background-image: url(iconmonstr-x-mark-1-240.png);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.likeButtonElement {
+  background-color: hsl(120, 100%, 77%);
+  background-image: url(iconmonstr-check-mark-1-240.png);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.goBackButtonElement {
+  background-color: hsl(45, 100%, 77%);
+  background-image: url(iconmonstr-undo-2-240.png);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.superLikeButtonElement {
+  background-color: hsl(210, 100%, 77%);
+  background-image: url(iconmonstr-star-3-240.png);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.choice img {
+  border-radius: 1000px;
+  height: 20px;
+  width: 20px;
+}
+
+.window {
+  background-color: red;
+  display: flex;
+  height: 254px;
+  overflow: auto;
+  width: 254px;
+}
+
+.window img {
+  height: 254px;
+  width: 254px;
+  flex-shrink: 0;
+}
+
+.smallGrayText {
+  color: lightgray;
+  font-size: 11px;
+}
+
+.data {
+  font-size: 15px;
+  margin-left: 13px;
+  margin-top: 17px;
+  margin-bottom: 8px;
+  width: 254px;
+}
+
+.nameEl {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.commaEl {
+  margin-right: 5px;
+}
+
+.ageEl {
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.jobEl {
+  margin-left: 13px;
+  margin-bottom: 10px;
+}
+
+.collegeEl {
+  margin-left: 13px;
+  margin-bottom: 10px;
+}
+
+.distanceEl {
+  margin-left: 13px;
+  margin-bottom: 14px;
+}
+
+.bioEl {
+  margin-left: 13px;
+}
+
+.underPicture {
+  font-size: 11px;
+  width: 254px;
+}
