@@ -115,7 +115,7 @@ var goToProfile = function (profile) {
   likeButtonElement.addEventListener('click', goToNextProfile);
   dislikeButtonElement.addEventListener('click', goToNextProfile);
 
-  pictureElement.addEventListener('click', zoomIntoProfile);
+  pictureElement.addEventListener('click', zoomIntoUnmatchedProfile);
 };
 
 function goToNextProfile() {
@@ -180,7 +180,7 @@ var profiles = [
       'http://i.huffpost.com/gen/1782331/thumbs/o-ALICIA-KEYS-GIVENCHY-570.jpg',
       'http://speakerdata.s3.amazonaws.com/photo/image/781014/alicia_keys.jpg',
     ],
-    matched: false,
+    matched: true,
     messages: [
       'Hey!',
       'OMG I LOVED YOUR DICK PIC!!!',
@@ -188,17 +188,17 @@ var profiles = [
     ]
   },
   {
-    name: 'Lacey',
+    name: 'Rihanna',
     age: 27,
     college: 'Duke University',
     distance: '10 miles away',
     bio: 'Send dick pics.',
     job: 'Hussy',
     pictureUrls: [
-      'http://i.huffpost.com/gen/1782331/thumbs/o-ALICIA-KEYS-GIVENCHY-570.jpg',
-      'http://speakerdata.s3.amazonaws.com/photo/image/781014/alicia_keys.jpg',
+      'http://s3-us-west-2.amazonaws.com/ruuvy-snooki-uploads/wp-content/uploads/2015/11/05/05144937/Nicole-Snooki-Polizzi-RIhanna-Marijuana-Business-Drugs.jpg',
+      'http://assets.nydailynews.com/polopoly_fs/1.1077948!/img/httpImage/image.jpg_gen/derivatives/gallery_1200/rihanna-music-video.jpg',
     ],
-    matched: false,
+    matched: true,
     messages: [
       'Hey!',
       'OMG I LOVED YOUR DICK PIC!!!',
@@ -206,15 +206,15 @@ var profiles = [
     ]
   },
   {
-    name: 'Jisu Song',
+    name: 'Ryn',
     age: 21,
     college: 'Seoul University',
     distance: '3 miles away',
     bio: 'Send dick pics.',
     job: 'Korean hottie',
     pictureUrls: [
-      'http://i.huffpost.com/gen/1782331/thumbs/o-ALICIA-KEYS-GIVENCHY-570.jpg',
-      'http://speakerdata.s3.amazonaws.com/photo/image/781014/alicia_keys.jpg',
+      'http://profetices.com.br/wp-content/uploads/2015/03/ryn_weaver-instagram.jpg',
+      'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxQTEhQUEhQVFBQVFBQUFxUWFBQUFBUUFBQXFhQVFRQYHCggGBolHBcUITEhJSkrLi4uFx8zODMsNygtLiwBCgoKDg0OGhAQGiwkICQsLiwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwtNCwsLCwsLCwsLCwsLCwsLP/AABEIALcBEwMBIgACEQEDEQH/xAAcAAABBAMBAAAAAAAAAAAAAAAAAQIFBwMEBgj/xABHEAABAwEEBggBCQQJBQEAAAABAAIDEQQSITEFBkFRYXEHEyIygZGhscEjQlJicoKS0fAUM6LhFiRDU2ODwtLxFRdUo7II/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAECAwQF/8QAJxEAAgICAgIDAAEFAQAAAAAAAAECEQMxEiEiQTJRYQRCgbHR4RP/2gAMAwEAAhEDEQA/ALhQhCYhUIQgBUJEqAEKGochuSAHJEIQAIQkQAKI1m03DY4TPO6jGHId5ziDRjRtJUuvNnStrabday1jv6vASyMA4OcMHy8anAcAN5TSsUnRFa5a3z6QlL5XERgnq4Qewxuzm7e7bwGC52qEiszFqkqhCABCFNaO1Sts4Bjs8hB2uFwfxUScktlKLekQqF1rejbSBr8k3D/Ebjy2KD0zoC02UgWiJ0dciaFp5ObUeCSnF6Y3jktojkiKpKqiRapaplUVSHQ8Oorq6KOkgyFljtrquNGwzOOLt0ch2u3O25HHOk0rXEEEGhGIIwIIyIKGC6PY5zHinrgeifXI26Dq5jW0wAB5OcjMmyc9h4813wUFoFinyKyrFaO6UAznb+K29FmsrfH2K09q3tFD5RvI+xWz0c0do6CiE8IWB1GslQiqYhUIQgASpEIARyVqR6UIAVCEIARBQkQBzXSRpc2XRtpkaaPLOrYRmHSkMBHKpPgvLZXoTp3J/wCmtpl+0xV5XZPjReeyrWiJbEKRKkTECdFGXEBoqSsZU5oKCjS85uIjb97AqZOkVGNui0+jLUiJkbZ5Wh8jwHNvDujZTdXBWbHABkKKDsmlbPZ2MZLKxpDQA2ovYDcMV0NitTJGh0ZDgciFyJcu2dj8VSDqhuUdprREVoidFK0OY4ZbQdhB2Eb1razyWq7dszmscfnmhp4FQ9l0XI0A2q3yOeSMGlrGA7gKJ/g/1lHa36DNltL4s6ZH6TTkTxp8VAkKxOkqyO60OMglGADsK3e1g4jM12riZLLWq3g+uzlyKpOjQQh7aGhSKyByEiUJgTupWnzYrZFOO6112QfSidg8eWPMBerIpA4BzTUOAIO8EVBXjcL010S6TM+i7OXGrow6E/5Zo3+G6kwR2Kw2julZVhtR7J5JDeiAIxK3dFfvG+PstIY+Xut7RI+UHI+y0ejCOzoI8hyQljyHJCxOk1kqRCYhUISIAWqVIEIAR6cmOT0AKkQhAAhCEAcf0s6OM+i7SGirow2Yf5Tg538N5eZV7HlaCCHCoIIIORBwIXlXXfV11gtckBBuVvROPzondw8x3TxaVSJkQKRKkoqJFa2q6K0RGMWdrTQ4OrxJz9KqI0XAXyNHFWDadDNfcccKMAHoscjpm2KLdky7SWibMWtkZ1kmF+TF5vHa8k0HjRdrqlag/txsdHE5oIa5t2tcqCp/VFyepepNHmVzrwcWuoQSKjLCtCRxViBrY3NvOoKHPMlZdOmjo7VpmTSEBka4A3TTA0rQ76bVWusfR66d4dfmcaCtSCCRXtDa3PIUGWCspttYX3WuBcACW1FaHI03LZa5pVLdol6poojTeqj7JEA95fedtNacPVc/FY63uDQfZXD0kxh0TabHV8sfgq2s0dMd7T6GvsAixOCdHG6XstHEqLXYaVstb28U8j/yuWtUF08DiCtIysxlGmYU4JoShWQOV7//AJ+mJslobsbaKj70bfyVEK++gGzltinecn2k04hkbAfWqGCLPCw2vunkVnCw2sdk8khvRzzBlyHspHRA+UHI+y0GDLkFvaMaDI2vH2K1lowjtHQtyCErRgELA6TTSpEKhCoQkKAFQkCEADswnLG7MJ9UAKhIiqAFqhJVFUgEcuM6QdUW6RhewXWzxgOhecBeNascfouoORodi7MhasXff90en/CaJZ5HttkfDI6OVpZIwlrmuFC0jYViaF6P6RNQY9IMvspHamCjJD3XgZMlps3HMcRgvP1u0PNBMYJo3Ryg0LXcTQEHJwOwjNVZLJTVCy3n1Ow+4P5LptK28sIaOC0dWYA1zgMQ2mPHZ71TdPN+UbuI+AXNPuR1YvGBbmoOkWvsrHA40oeBGYUhp/RX7SGNvvZdeHVYS0kDZyVa9F2kLskkJOB7bRzzp4rvdKMmc/F/Vwb2YyuO2t4UaPNJddM1Xk00bUGgLO1zXuAMrRdbISA+7uvDEhSrnjeOG/8AmuXsejIA6odPMTlfdQN/CG18SVLQaHhaes6sXxkcTQ7xUoT+i8kV7bIPXBhLmNORLgPEUx81XrIaXhuvYcHAqxdYpb0sY+sPzXFdVWZw3gjyUp7E1ojrXZa3j9mv3SPgVz1usFS6OmYc5v2mHH0IXdRQ9pzeB+NPVQ9osvy8Lv8AEd+FwDT7OPiiMqZM4WitXMp4JAp/WzR3VTvGFC28PFxHw9VAgLrTvs4n10KCvU/R5oc2XR9niIo+5ff9uQ33DwrTwVLdE2pZtloE0ra2aF1XVylkGLYxvANCeGG1ejAEMEKFhtfdPIrOsFr7p5FIb0QLRly+C3tGD5Vvj7FaTdnILe0b+8bzPsVo9GEdo6BgwCERnAJVidJpISIVCFQUIKABCQHcgIEJtTkzanIAVJVCEDFqhNCWqBAsLGVLuY9AFmCxxHF3P4BACkqH1i1dgtjLs7akVuSNwkYTta7dwOB3KZcEx+CAKkn1PksJkN4SRuNWuGBwFKObsy4jFc7pmPtM5D0qD6K2tbRWM7g33wKqbT3fA+i2vma+1Fi15G0H4ERZbabLPHKPmmjuRND7FXfoO2NmaMagio3YqhNYzgftMHkCT7rc1Q16dZqMlBcwZEYlvgqlH2hRlTcWeiobLE3EAVTbTK0Ancqlf0nAjsUPMlRtu13tUwLIhntA+KzbfpGqr2zr7ZbQ+0YGt3+dVCWYVmJ+uR6NHxUXq+9wc++auLSK8Q019St+yyUuVzqCfMLJdG2zfLaTP+yPMuP5rX0gwCh2gg8qYu+KzvP9YI+pX9eC0mu6x7245gcrwvVHsp9j9HLa/Qk2qvzXNHhhUe5WbUDo6ltzw+SsdlacZKUMlPmxVz+1kOJwU5rk5sP7POCHucKGJzQWENqaux8PFSejelx4DWGzNIwaLj7tKYYNu4DxK7cduJ52WoydlqaN0fHAxkULAyNjbrWjICvqdpO1by4rR+uTpS0tslqyxLY+saOAdgPKvJdHozTcUxuguZJj8nJG+J9BmQ14F4cRUKgRJrDau6eSzBYrRkUDejn2jLkFvaN/eN5/ArSY8Cldo+C3NHH5RnP4FavRzx2joYsglSRHAIWB0mklSVQFRIpQSkqkJQA4JEBNqgAGacmNzKegARRFUlUAKEVSBCAFWKA58yslVis5w8SgDKUxxTiVicUAc9rSaRHjhjwxVS6WNZKbXXR4Zn0CtTW8/IPPgP15qo5nX5XuGTW0HM0BWUvkaw+P9yD09LUgfXBP360H4bq5yZuKm7fH23faHpUBRNqZRzhuJ91qtGT2O0e7tD9YK2tXrDG6MOAGSp9jrpDhsVmam6T7IAPZcMPiFhmXRvgfYtLs1Nxd/EP5rd1Z0VLa5rseQHaccmC9t40wopfVXV39rtTnvHyDMXfXccmfnw5q2IYWtFGtA4AACmzJRGF9msp8ekcDpDUuYTNfG5r2ubdd80tND2iNoyy3KMOo1rjc9zbklRUXXUOeVHU2FWngFB2vSb3vpBdIBo57q3Ryp3iN3qnJRiEHKWiitb+sbKxsrS14YG3HYFoFSc/1iVJ6sss9hswtcrBNPI5/7NG7K6w0dK4fRrly44WJ0gWaxGzCa2s658XduydQ997Dqw4YkY1pXYoXUu3Wa22gtj0fEIrK1rGyyPdM4XTSNrGuFBk51a+62i1xOacXzf2b2jI7bIwS222myhwBbBEyNpDdl4uBI5LNNboWiht08prUA9W8VGWF3A8QQeKmtNarMtDr98td+Jn4VBzdG9cpW/hI9isVPLbuq/P+k54S41h39yb/AMI6jVvTImaWl4c5u2lC5u8jGh8SpafIrnNW9UBZiSZXOqKANq2nGuZKnzUCjsTv2O402HgtoSb2qJjCcIJTkm/bSpEFUZcMN1RktnRpPWM5rRv03ZYgrNYJh1jMcbwwXS10YJ9o6yI4frehJFkELnOo1EJKoCokVITuRVIEAOSBIhADWbU9MjTkCFqhISk8EDHVSVTUVQIdVYLK7s473e5TyViszuwONfcpi9meqZIlTXFIDmdcXUs9M6lg/NVboeDvA7wRxBvFWHr7absTQMzIAOQFVx7YQJBcye0uHMGpA+6T5LCb8jpxLo5S02Wrm5YlzDzBqCoXSMVWl21pod5aTTHiD7rrtNQAYjI9sc8QRzzC5q19prj9IUPNtBXxVQkLJGiD/XNdRqlY5jJEyNpf1tLoAyP0uAwNSubhOOPLzwV19CbmmKQmhcGhgNMQ2868K8wPRPJ9EYt2WHq7o4WaERDEjFzvpPdiT8OQUkJKLAwrPVTRpZoaatNGNb/eOEfIOBr6ArV0i9lmsz5CKMijLqDc0ZBb9vsYkaAdjmuHNpqtDXKwddYbTE3N0LqcwLwHoo43LsvnUaR5+1z0xJaerlkOJBIbU3Wg0wHiDird6K9GdRYY8KOl+VcTn2u75NuqmNJMDooRtMj4/J4H+peiNCx3Y2NGQa0DwFFpJ9JGcV5OTJZrTvWQM4ojTygbBjqJ7xUELXJWVjk0yWjmJ43Mc5js+A7J4hNsXfZX6Q91L6egq0P2tIB5E4evuoWyO+UZ9oe66Yu0cUo8ZUdmw4ITWlCxOk16oqkqhMkcUJEIAVISkB5pHFABGcE6qYw4JSUABKEhKaXcUCHVTS5NvJpcmFg9+B5FMssnYad4HqmTvo13I+ySynsM+y32TJvs2byFja5OSGV/0hSisQ2X3k+AP5LmrLU2SCVtb0UgFeBA/JdB0iM7N6ndbMR4h6hdXyDG6E5Pia4H6zaE+hPkuTI+2dmJdIZpuAOjLhgC6+B9F14CRvCjhXkVxkwAZMDsdQeeXv5LubaKda07QHeNxt6nMAfhVcaSmvVplW+729yfNGHsM3RGtbj4081a/QnbQ2aWAnvRukbza5rXj1B8SqneMF1XRZayzSdmxwf1kZ5OjdT1DV0SVnPF0ej2BZgsMTlmaVBqOqoTXK29XZJSO84dW3m/s+gJPgpklVv0h6Yv2iOztrSIGV5+s5pa0eANfEKZOkVFWyrYoaus1f8Ayq+DjER/8leg9Gu7I5Lz9pB4imib9C0A/dLgR6OCvbQstWN5BS5aHGOzoIynuKwRFZCVSYUIU9pWIlK59ATwQmJofIwPa5rsnAtPIihXI6Ncb4a/vxy9W/YC5jqXqbA4UcBucF1EUtBUmm0k4Ab1xejLWJppp2dya0X4zscyNkcIdyPV3hvDgt8TObMtFhOzwQmNKEijChJVFUyRU3HeiqL43hACprzgUVTJTgmIexBKY3JISgQ4lNJTSUwlMVmS8mlyaSmkoFZitjqMd9k+yyQHst5D2WtpE/JP5LYaOGFBjX4bExezKBuS1WNOqkM43pChJjNPouHoT8SuK1emA6tx+awD72LT7qxtb46x+I9Td+KqZrjEzh1jhyoan1K4sq8mjuwvxTJPTGkqXydooANpo4YnkuKtb29UQM3PFfstr/JSumZqXeZ9QomSPMUwLQRzb/wR4qsSpCzO2RwHuB5KV1StIit1mcchaYvIuun0KjJxiRx9wtdxIIIwIoQdxGS6NnMj11EFnAUBqvpT9ossEw/tI2uPB1KPHg6qmmSLJnQh8poCdwr5KkrUS60OlJr115/gS01HgPZXWReBG8EeYVIWSwva3qngh1lkkirjQsq5tK8rruSxy6s1xbo4bTUhJrtIOP1mEMr/AAA+Kv7VRx6mOud1vsqHfB1jg0Y0naPuSFoJ82jzXoLQkNGNHAKsn9KJxL5MnYynFyYxI4osdClyhNc9ZI7DZ+tkDnVe1jWtpec41O05UBUsXUVTdO9vq6ywA5B8xHE0Y32erxrk6M8j4qzmdZdfLTbQWVEMBqDEwkl+WEj83DgKDeCuz6N7bfswZXtRPFPsu7Q9bwVPsC7rox0hcnMZ/tG4faZ2h6Xl2xiqo8+cm5WegIn1AO/HzQsMTwBQ7K+VcPRCxOkCUAptUJkDq/r3SFNP6+KbWmxAWPJWKY4eKWqxWh2HimJszVSEppKaSmKxxKaXcUlUiBC1SISFAGtpH92fAeoW45alsxaPtNHqtwoBCBOSVSlIZBa2mkDju/MH4KrNKRXrKXD5tscK8JI2u+CtrWOz9ZZ5G/VKqmym/ZbZHtBjnbyBc13lULnyLzv8OnE/Cv05/SDL7abRhy2tPn7LXZCXtAHebWg8iQt2zi8aVwcHDxAB+KOqLXA8RXnkD4rLlXRrx5dnOS4uLuNKbqBa8gXTaYsAa7rGiocBeHiO0PjzG9c7bIyK8/eq6ISUl0c84OLplrdB+mCYprO44RuEjODZKhwHC8K/eVqxvVFdCVmkfbpCzuNs7+sqaYFzbtON6nkVeEcbxm13kVE12awfRuNdRRFu0a0PkNaC0G/SgNJWRgE+LWjyUpFG4/NPkn2izCrL+YOApexIpioabWrKbS7bKGseijHpXqyMKvJ3FtQ6M+rfEFXXo+OgC5IWdk1p/aGtuuAfERlQxyEHDkAuysYwCyUuTNqpG3RMesgTHLRkjAvP/Szbes0nKNkTY4h4NvH1cV6ABXl7Tlr6602iXO/NI7wLzT0otsC9nN/IfVGk1SOh9IGGVsjc2kOFcqg/lgo9qQHFdSONqz1XA8SNbI09l7WuHJwBHohQmoFuD9HWUk5R9Xn/AHRMf+lCyaN0+joSeCbe/XwWOvNBd6J0RY4uSFyYXcUl7imKx9eawzO7vP8ANOvb1hkdi3mmJs2KoqmDilQAtUgR4pQgBapEoQkMw2gd37bfdbBK1582fbathwQAJUgCXFIZhmHBVdpywfsdq6wgmB99rjTKKXveLSAeQVozNO4+S0tKaOE0Za9pI30xB3hRkjyRWOXGRS1psos8ha/FpdVrwcMqVB4tIKXRdoEjnQSDtCoB+kDx2FdDpTVKWKrP3sB7u10W6g2tG7cTRcHpESQyi826+M0P0XtGRryouWlK17O1ycafo6CSEisMmDh3H0wNeHGpBHErm9LRAsee65rmgt4nKh2igK66z6chljaJzRlaCXbETsfwrTHlsxXN66WF0bhXGtKOGTxjRw9fNLC2pUx5qcbRP9BOlhFpAwuApaY3MB2h8dXtx3EB/jRX1aJ20uP6xuNQ5ofvqKOYvIcExY5r2uLXNIc1wNC0g1BB2FX9qfrpaZYGOJExoRW5V15pLHBwYOAdxDua65OlZyxXJ0WJPpJjWF7jQCmJBaKnLFwCjG6aje3rCAGtxvuwptUTap7RK2srHObtZHGauHG8cPRYLVYethHW3om1bciAo4uBwBbtPoM1yZ/5cYJKnbZ3YP4XOScpUv8Af5V2vzoOzfEjKXZe0abH/OB3OoAVPWU4LFDotnUmMC6T2sMaOAwx2nAYrBo2Y91+DhhzUdxffsvI4Sk+GiWqmPKWqxPK0MTR07bOqs08n0IZHeTDReXW4Beg+lC19Xoy0b3hsY++8A+lV57XVh+JyZ9j2uxTmZrEE9pWyOdo6XRmnZo42tY8horQDi4k+pQoFr8EqqkZXL0z0tNpqBnekp9x/wAGrVk1osgzl/8AXJ/tQhWsSB5WNk1nswp2nGuVGHHzosEmuNlaSHGQEZi4D7FCEf8Amgc2Y/6Z2bY2Y/dYP9SYdcoaikUp/APihCOCDmxztbm3bwgcRhnI0Yb8kw64ileo5DrPjdQhHCIcmIdb3Gl2ztxpSsm+tPmjcmjXJ391Hyq5CEcIhyZhtGuM3zYosa5h2z7yxf0ztAGMcX4Xf7kIRwQ+TNeTXK074m47I65Z5krIdbbTQgOZUboxnlXFCEuK+g5P7Mln1ktZzeNuTY86YfNTBrHaqmsuHBrPyQhHFfQW/s0NIaxWkD988Y7KD2CNFafmfNE0zPcHPaHAk0OOISIQ0uLBN8kWFNGHClPFRFp1XglPykbXHKpQhea0meqman/bewkk9WRezDZJGg8wHUW9HqLYhG2Mw32NNQ175HgcrzjTkhCpJEtmzZtTrCwgtskAIyPVMJHiQp6zQNaKNAAGwAAeQQhUiWbjGocwHMIQqEYzZxswUZpCy0de2HA89hQhZ5Yriy8cnyFjPih6ELGJqyrenHSFIbPAPnyOkPKNtB6v9FT15CF2w+KOPJ8gAWeMYYpELRGMjY6vchCFrRzcmf/Z',
     ],
     matched: false,
     messages: [
@@ -224,17 +224,17 @@ var profiles = [
     ]
   },
   {
-    name: 'Womba',
+    name: 'Wet Girl',
     age: 13,
     college: 'UC Berkeley',
     distance: '5 miles away',
     bio: 'Send dick pics.',
     job: 'Child Porn Star',
     pictureUrls: [
-      'http://i.huffpost.com/gen/1782331/thumbs/o-ALICIA-KEYS-GIVENCHY-570.jpg',
-      'http://speakerdata.s3.amazonaws.com/photo/image/781014/alicia_keys.jpg',
+      'http://a3.files.fashionista.com/image/upload/c_fit,cs_srgb,dpr_1.0,q_80,w_620/MTI5NjUyMjE2NDE5MDk1ODI2.jpg',
+      'http://res.cloudinary.com/thefader/image/upload/s--8NuDnRyV--/w_720,c_limit,q_jpegmini,f_auto/uqtlju6httdpg7gfqawt.jpg',
     ],
-    matched: false,
+    matched: true,
     messages: [
       'Hey!',
       'OMG I LOVED YOUR DICK PIC!!!',
@@ -242,15 +242,15 @@ var profiles = [
     ]
   },
   {
-    name: 'Amy',
+    name: 'Jess',
     age: 98,
     college: 'UC Los Angeles',
     distance: '7 miles away',
     bio: 'Send dick pics.',
     job: 'Tart',
     pictureUrls: [
-      'http://i.huffpost.com/gen/1782331/thumbs/o-ALICIA-KEYS-GIVENCHY-570.jpg',
-      'http://speakerdata.s3.amazonaws.com/photo/image/781014/alicia_keys.jpg',
+      'http://www.irishtimes.com/polopoly_fs/1.2319964.1439830879!/image/image.jpg_gen/derivatives/box_620_330/image.jpg',
+      'https://metrouk2.files.wordpress.com/2015/06/jess-glynne.jpg',
     ],
     matched: false,
     messages: [
@@ -260,15 +260,15 @@ var profiles = [
     ]
   },
   {
-    name: 'Taylor',
+    name: 'Beyonce',
     age: 30,
     college: 'UC Berkeley',
     distance: '10 miles away',
     bio: 'Send dick pics.',
     job: 'Fellatio artist',
     pictureUrls: [
-      'http://i.huffpost.com/gen/1782331/thumbs/o-ALICIA-KEYS-GIVENCHY-570.jpg',
-      'http://speakerdata.s3.amazonaws.com/photo/image/781014/alicia_keys.jpg',
+      'http://images4.mtv.com/uri/mgid:uma:video:mtv.com:988024?width=657&height=370&crop=true&quality=0.85',
+      'https://picturiadotnet.files.wordpress.com/2016/02/hot-beauty-beyonce.jpg',
     ],
     matched: false,
     messages: [
@@ -278,15 +278,15 @@ var profiles = [
     ]
   },
   {
-    name: 'Jerome',
+    name: 'Cher',
     age: 87,
     college: 'UC Santa Barbara',
     distance: '6 miles away',
     bio: 'Send dick pics.',
     job: 'Female impersonator',
     pictureUrls: [
-      'http://i.huffpost.com/gen/1782331/thumbs/o-ALICIA-KEYS-GIVENCHY-570.jpg',
-      'http://speakerdata.s3.amazonaws.com/photo/image/781014/alicia_keys.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/d/dd/Cher_-_Casablanca.jpg',
+      'http://assets.rollingstone.com/assets/images/story/cher-planning-to-write-and-star-in-autobiographical-broadway-show-20120626/rectangle.jpg',
     ],
     matched: false,
     messages: [
@@ -296,17 +296,17 @@ var profiles = [
     ]
   },
   {
-    name: 'Shantelle',
+    name: 'Banks',
     age: 28,
     college: 'UC San Bernadino',
     distance: '11 miles away',
     bio: 'Send more dick pics.',
     job: 'Garbageman',
     pictureUrls: [
-      'http://i.huffpost.com/gen/1782331/thumbs/o-ALICIA-KEYS-GIVENCHY-570.jpg',
-      'http://speakerdata.s3.amazonaws.com/photo/image/781014/alicia_keys.jpg',
+      'http://www.vogue.com/wp-content/uploads/2013/08/img-2banks_121347260528.jpg',
+      'http://hdlsd.com/wp-content/uploads/2014/11/BANKS.jpg',
     ],
-    matched: false,
+    matched: true,
     messages: [
       'Hey!',
       'OMG I LOVED YOUR DICK PIC!!!',
@@ -333,7 +333,7 @@ var zoomIntoProfile = function() {
   screen.insertBefore(pictureWindow, document.querySelector('.choices'));
 
   // load each img from profile.pictureUrls to pictureWindow
-  var profile = profiles[currentProfileIndex - 1];
+  var profile = profiles[currentProfileIndex];
 
   for (var u = 0; u < profile.pictureUrls.length; u++) {
     var pictureImg = new Image(500, 500);
@@ -394,8 +394,12 @@ var zoomIntoProfile = function() {
   everythingButChoices.appendChild(college);
   everythingButChoices.appendChild(distance);
   everythingButChoices.appendChild(bio);
+  screen.appendChild(everythingButChoices);
+  document.querySelector('.phone').appendChild(screen);
+};
 
-  // Choices from zoomed profile view
+  // Appends like, dislike, and superlike buttons to screen in unmatched zoom view
+function appendZoomedChoiceBar () {
   var choiceBarElement = document.createElement('div');
   choiceBarElement.className = 'choice-bar';
 
@@ -412,14 +416,21 @@ var zoomIntoProfile = function() {
   choiceBarElement.appendChild(superLikeButtonElement);
   choiceBarElement.appendChild(likeButtonElement);
 
-  document.querySelector('.phone').appendChild(screen);
-  screen.appendChild(everythingButChoices);
-  screen.appendChild(choiceBarElement);
+  document.querySelector('.screen').appendChild(choiceBarElement);
 
   likeButtonElement.addEventListener('click', goToNextProfile);
   dislikeButtonElement.addEventListener('click', goToNextProfile);
   superLikeButtonElement.addEventListener('click', goToNextProfile);
 };
+
+// zooms into unmatched profile
+function zoomIntoUnmatchedProfile () {
+  zoomIntoProfile();
+  appendZoomedChoiceBar();
+}
+
+// TODO THIS COMMIT create rough html for match list, messages, and zoomprofile.
+//      Separate common html from zoom and match zoom, and call in each instance
 
 // GO TO MATCH LIST
 function goToMatchList() {
@@ -428,10 +439,77 @@ function goToMatchList() {
   var screen = document.createElement('div');
   screen.className = 'screen';
 
+  var header = document.createElement('div');
+  header.innerText = 'header';
+  screen.appendChild(header);
+
   var profileButton = document.createElement('button');
   profileButton.innerText = 'goToProfile';
   screen.appendChild(profileButton);
-  profileButton.addEventListener('click', function () {goToProfile(profiles[currentProfileIndex])});
+  profileButton.addEventListener('click', function () {
+    goToProfile(profiles[currentProfileIndex]);
+  });
+  header.appendChild(profileButton);
+
+  var matchListHeaderIcon = document.createElement('img');
+  header.appendChild(matchListHeaderIcon);
+
+  var searchBar = document.createElement('div');
+  searchBar.innerText = 'searchBar';
+  screen.appendChild(searchBar);
+
+  var searchTerm = document.createElement('input');
+  searchTerm.type = "text";
+  searchBar.appendChild(searchTerm);
+
+  var magnifyingGlassIcon = document.createElement('img');
+  searchBar.appendChild(magnifyingGlassIcon);
+
+  var newMatches = document.createElement('div');
+  newMatches.innerText = 'newMatches';
+  screen.appendChild(newMatches);
+
+  var newMatchesHeader = document.createElement('span');
+  newMatchesHeader.innerText = 'newMatchesHeader';
+  newMatches.appendChild(newMatchesHeader);
+
+  var newMatchesList = document.createElement('ul');
+  newMatchesList.innerText = 'newMatchesList';
+  newMatches.appendChild(newMatchesList);
+
+  var newMatch = document.createElement('li');
+  newMatch.innerText = 'newMatch';
+  newMatchesList.appendChild(newMatch);
+
+  var newMatchPic = document.createElement('img');
+  newMatch.appendChild(newMatchPic);
+
+  var newMatchName = document.createElement('span');
+  newMatchName.innerText = 'newMatchName';
+  newMatch.appendChild(newMatchName);
+
+  var messages = document.createElement('div');
+  messages.innerText = 'messages';
+  screen.appendChild(messages);
+
+  var messagesHeader = document.createElement('span');
+  messagesHeader.innerText = 'messagesHeader';
+  messages.appendChild(messagesHeader);
+
+  var messagesList = document.createElement('ul');
+  messagesHeader.innerText = 'messagesHeader';
+  messages.appendChild(messagesHeader);
+
+  var message = document.createElement('li');
+  message.innerText = 'message';
+  messagesList.appendChild(message);
+
+  var messagePic = document.createElement('img');
+  message.appendChild(messagePic);
+
+  var messageName = document.createElement('span');
+  messageName.innerText = 'messageName';
+  message.appendChild(messageName);
 
   var messagesButton = document.createElement('button');
   messagesButton.innerText = 'messagesButton';
@@ -448,15 +526,40 @@ function goToMessages() {
   var screen = document.createElement('div');
   screen.className = 'screen';
 
-  var matchedZoomProfileButton = document.createElement('button');
-  matchedZoomProfileButton.innerText = 'matchedZoomProfileButton';
-  screen.appendChild(matchedZoomProfileButton);
-  matchedZoomProfileButton.addEventListener('click', goToMatchedZoomProfile);
+  var header = document.createElement('div');
+  header.innerText = 'header';
+  screen.appendChild(header);
 
   var matchListButton = document.createElement('button');
   matchListButton.innerText = 'matchListButton';
-  screen.appendChild(matchListButton);
+  header.appendChild(matchListButton);
   matchListButton.addEventListener('click', goToMatchList);
+
+  var matchedZoomProfileButton = document.createElement('button');
+  matchedZoomProfileButton.innerText = 'matchedZoomProfileButton';
+  header.appendChild(matchedZoomProfileButton);
+  matchedZoomProfileButton.addEventListener('click', goToMatchedZoomProfile);
+
+  var messageBoard = document.createElement('div');
+  messageBoard.innerText = 'messageBoard';
+  screen.appendChild(messageBoard);
+
+  // messages will be appended to messageBoard
+
+  var inputMessageContainer = document.createElement('div');
+  inputMessageContainer.innerText = 'inputMessageContainer';
+  screen.appendChild(inputMessageContainer);
+
+  var cameraIcon = document.createElement('img');
+  inputMessageContainer.appendChild(cameraIcon);
+
+  var message = document.createElement('input');
+  message.type = 'text';
+  inputMessageContainer.appendChild(message);
+
+  var send = document.createElement('button');
+  send.innerText = 'send';
+  inputMessageContainer.appendChild(send);
 
   document.querySelector('.phone').appendChild(screen);
 };
@@ -465,12 +568,11 @@ function goToMessages() {
 function goToMatchedZoomProfile () {
 clearScreen();
 
-var screen = document.createElement('div');
-screen.className = 'screen';
+zoomIntoProfile();
 
 var goToMessagesButton = document.createElement('button');
 goToMessagesButton.innerText = 'goToMessages';
-screen.appendChild(goToMessagesButton);
+document.querySelector('.screen').appendChild(goToMessagesButton);
 goToMessagesButton.addEventListener('click', goToMessages);
 
 document.querySelector('.phone').appendChild(screen);
@@ -478,3 +580,7 @@ document.querySelector('.phone').appendChild(screen);
 
 // CALL FIRST PROFILE IN ARRAY WHEN WEBSITE LOADS
 goToProfile(profiles[0]);
+
+
+// TODO make ul populate with li based on match boolean (if profile.message[0] !=== null? undefined? can i check directly for stringiness?)
+// TODO create conversations in profile array (how to structure?)
