@@ -22,7 +22,7 @@ body {
   flex-direction: column;
   height: 451px;
   align-items: center;
-  overflow: hidden;
+  overflow: auto;
   width: 254px;
 }
 
@@ -39,12 +39,10 @@ body {
   border-bottom: 1px solid lightgray;
   display: flex;
   align-items: center;
-  height: 24px;
+  height: 40px;
   justify-content: space-between;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-bottom: 5px;
+  flex-shrink: 0;
+  margin: 0px 10px;
   width: 240px;
 }
 
@@ -257,4 +255,122 @@ body {
 .under-picture {
   font-size: 11px;
   width: 254px;
+}
+
+/* goToMatchList */
+.match-list-to-profiles-icon {
+  background-image: url(iconmonstr-weather-92-240.png);
+  background-size: 24px 24px;
+}
+
+.match-list-header-icon {
+  background-color: red;
+  background-image: url(iconmonstr-speech-bubble-23-240.png);
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  margin-right: 100px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: lightgray;
+  border-radius: 3px;
+  height: 25px;
+  margin-top: 5px;
+  margin-bottom: 24px;
+  width: 240px;
+}
+
+.magnifying-glass-icon {
+  background-image: url(iconmonstr-magnifier-4-240.png);
+  background-size: 15px 15px;
+  height: 15px;
+  margin-right: 5px;
+  width: 15px;
+}
+
+.search-term {
+  color: gray;
+  font-size: 10px;
+  text-transform: capitalize;
+}
+
+.match-list-section-header {
+  color: red;
+  font-size: 13px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.new-matches {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+  height: 123px;
+  width: 254px;
+}
+
+.new-matches-list {
+  display: flex;
+  overflow: auto;
+}
+
+.new-match {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 82px;
+  margin-left: 5px;
+  width: 64px;
+}
+
+.name-new-match {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.match-list-profile-picture {
+  border-radius: 1000px;
+  height: 64px;
+  margin-left: 5px;
+  width: 64px;
+}
+
+.new-match-with-messages {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 76px;
+  width: 254px;
+}
+
+.name-and-message-preview-container {
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  height: 75px;
+  margin: 0px 10px;
+}
+
+.match-list-messages-name {
+  font-size: 14px;
+  font-weight: 600;
+  width: 174px;
+}
+
+.message-preview {
+  display: flex;
+  overflow: hidden;
+  font-size: 9px;
+  height: 10px;
+  width: 174px;
 }

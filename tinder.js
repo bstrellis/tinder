@@ -249,11 +249,11 @@ function goToMatchList() {
   screen.className = 'screen';
 
   var header = document.createElement('div');
-  header.innerText = 'header';
+  header.className = 'header match-list-header';
   screen.appendChild(header);
 
   var profileButton = document.createElement('button');
-  profileButton.innerText = 'goToProfile';
+  profileButton.className = 'header-icon match-list-to-profiles-icon';
   screen.appendChild(profileButton);
   profileButton.addEventListener('click', function () {
     goToProfile(profiles[currentProfileIndex]);
@@ -261,34 +261,43 @@ function goToMatchList() {
   header.appendChild(profileButton);
 
   var matchListHeaderIcon = document.createElement('img');
+  matchListHeaderIcon.className = 'match-list-header-icon';
   header.appendChild(matchListHeaderIcon);
 
   var searchBar = document.createElement('div');
-  searchBar.innerText = 'searchBar';
+  searchBar.className = 'search-bar';
   screen.appendChild(searchBar);
 
-  var searchTerm = document.createElement('input');
-  searchTerm.type = "text";
-  searchBar.appendChild(searchTerm);
-
-  var magnifyingGlassIcon = document.createElement('img');
+  var magnifyingGlassIcon = document.createElement('div');
+  magnifyingGlassIcon.className = 'magnifying-glass-icon';
   searchBar.appendChild(magnifyingGlassIcon);
 
+  var searchTerm = document.createElement('input');
+  searchTerm.className = 'search-term';
+  searchTerm.type = "text";
+  searchTerm.placeholder = 'search 147 matches';
+  searchBar.appendChild(searchTerm);
+
   var newMatches = document.createElement('div');
+  newMatches.className = 'new-matches';
   screen.appendChild(newMatches);
 
-  var newMatchesHeader = document.createElement('span');
-  newMatchesHeader.innerText = 'newMatchesHeader';
+  var newMatchesHeader = document.createElement('div');
+  newMatchesHeader.className = 'match-list-section-header';
+  newMatchesHeader.innerText = 'new matches';
   newMatches.appendChild(newMatchesHeader);
 
   var newMatchesList = document.createElement('ul');
+  newMatchesList.className = 'new-matches-list';
   newMatches.appendChild(newMatchesList);
 
   var messages = document.createElement('div');
+  messages.className = 'match-list-messages';
   screen.appendChild(messages);
 
-  var messagesHeader = document.createElement('span');
-  messagesHeader.innerText = 'messagesHeader';
+  var messagesHeader = document.createElement('div');
+  messagesHeader.className = 'match-list-section-header';
+  messagesHeader.innerText = 'messages';
   messages.appendChild(messagesHeader);
 
   var messagesList = document.createElement('ul');
@@ -299,23 +308,35 @@ function goToMatchList() {
     var profile = profiles[i];
     if (profile.matched && profile.messages.length === 0) {
       var newMatch = document.createElement('li');
+      newMatch.className = 'new-match';
       newMatchesList.appendChild(newMatch);
       var profilePicture = document.createElement('img');
+      profilePicture.className = 'match-list-profile-picture';
+      profilePicture.src = profile.pictureUrls[0];
       newMatch.appendChild(profilePicture)
-      var name = document.createElement('span');
-      name.innerText = profile.name;
-      newMatch.appendChild(name);
+      var nameNewMatch = document.createElement('div');
+      nameNewMatch.className = 'name-new-match';
+      nameNewMatch.innerText = profile.name;
+      newMatch.appendChild(nameNewMatch);
     } else if (profile.matched && profile.messages.length >= 1){
       var newMatchWithMessages = document.createElement('li');
+      newMatchWithMessages.className = 'new-match-with-messages';
       messagesList.appendChild(newMatchWithMessages)
       var profilePicture = document.createElement('img');
+      profilePicture.className = 'match-list-profile-picture';
+      profilePicture.src = profile.pictureUrls[0];
       newMatchWithMessages.appendChild(profilePicture)
-      var name = document.createElement('span');
-      name.innerText = profile.name;
-      newMatchWithMessages.appendChild(name);
-      var messagePreview = document.createElement('span');
+      var nameAndMessagePreviewContainer = document.createElement('div');
+      nameAndMessagePreviewContainer.className = 'name-and-message-preview-container';
+      newMatchWithMessages.appendChild(nameAndMessagePreviewContainer);
+      var nameMessages = document.createElement('div');
+      nameMessages.className = 'match-list-messages-name';
+      nameMessages.innerText = profile.name;
+      nameAndMessagePreviewContainer.appendChild(nameMessages);
+      var messagePreview = document.createElement('div');
+      messagePreview.className = 'message-preview';
       messagePreview.innerText = profile.messages[profile.messages.length - 1].text;
-      newMatchWithMessages.appendChild(messagePreview);
+      nameAndMessagePreviewContainer.appendChild(messagePreview);
     } else {}
   }
 
@@ -473,7 +494,7 @@ var profiles = [
       {sentByHer: true, text: 'I want you to fuck me so hard!'},
       {sentByHer: false, text: 'Ive got some bad news.  Im actually a catfish.'},
       {sentByHer: true, text: 'Noooooooooo!'},
-      {sentByHer: false, text: 'Im so sorry. Maybe someday youll understand why I had to do this.  I mean, I didnt have to do this, but Im trying to justify myself to myself.'},
+      {sentByHer: false, text: 'Ho! There, upon the northern horizon - a light! Ye gods, but I think we have reached the shores of Valhalla!'},
     ]
   },
   {
@@ -540,7 +561,7 @@ var profiles = [
       {sentByHer: true, text: 'I want you to fuck me so hard!'},
       {sentByHer: false, text: 'Ive got some bad news.  Im actually a catfish.'},
       {sentByHer: true, text: 'Noooooooooo!'},
-      {sentByHer: false, text: 'Im so sorry. Maybe someday youll understand why I had to do this.  I mean, I didnt have to do this, but Im trying to justify myself to myself.'},
+      {sentByHer: false, text: 'Ho! There, upon the northern horizon - a light! Ye gods, but I think we have reached the shores of Valhalla!'},
     ]
   },
   {
@@ -565,7 +586,7 @@ var profiles = [
       {sentByHer: true, text: 'I want you to fuck me so hard!'},
       {sentByHer: false, text: 'Ive got some bad news.  Im actually a catfish.'},
       {sentByHer: true, text: 'Noooooooooo!'},
-      {sentByHer: false, text: 'Im so sorry. Maybe someday youll understand why I had to do this.  I mean, I didnt have to do this, but Im trying to justify myself to myself.'},
+      {sentByHer: false, text: 'Ho! There, upon the northern horizon - a light! Ye gods, but I think we have reached the shores of Valhalla!'},
     ]
   },
   {
@@ -590,7 +611,7 @@ var profiles = [
       {sentByHer: true, text: 'I want you to fuck me so hard!'},
       {sentByHer: false, text: 'Ive got some bad news.  Im actually a catfish.'},
       {sentByHer: true, text: 'Noooooooooo!'},
-      {sentByHer: false, text: 'Im so sorry. Maybe someday youll understand why I had to do this.  I mean, I didnt have to do this, but Im trying to justify myself to myself.'},
+      {sentByHer: false, text: 'Ho! There, upon the northern horizon - a light! Ye gods, but I think we have reached the shores of Valhalla!'},
     ]
   }
 ];
@@ -599,4 +620,6 @@ var profiles = [
 goToProfile(profiles[0]);
 
 
-// TODO make uls (new match and messages and messageboard) populate with li based on match boolean (if profile.message[0] !=== null? undefined? can i check directly for stringiness?)
+// TODO class and style html for match list
+// TODO next commit: code to zoom into specific profile from match list or messages
+// TODO commit after: create and style html for new match message state
